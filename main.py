@@ -15,14 +15,14 @@ import os
 import socket
 import shutil
 import time
-
+from datetime import datetime
 
 
 
 load_dotenv()
 
 
-
+timestamp=datetime.now().isoformat()
 
 broker_address=os.getenv("broker_address")
 port=int(os.getenv("port"))
@@ -64,11 +64,15 @@ time.sleep(5)
 #mqttc.publish(topic,combine_dict_json2,qos=0)
 
 #print("technical data published")
-mqttc.publish(topic,new_dict4,qos=0)
+new_dict4["timestamp"]=timestamp
+print(json.dumps(new_dict4))
+mqttc.publish(topic,json.dumps(new_dict4),qos=0)
 print("module temp sent")
 time.sleep(5)
-
-mqttc.publish(topic,new_dict3,qos=0)
+new_dict3["timestamp"]=timestamp
+##voltage info
+print(json.dumps(new_dict3))
+mqttc.publish(topic,json.dumps(new_dict3),qos=0)
 print("voltage info sent")
   						
  

@@ -28,7 +28,7 @@ with can.interface.Bus(bustype="socketcan", channel="can0", bitrate=250000) as b
    
    
    count=count+1
-   time.sleep(1)
+   #time.sleep(1)
    print(count)
    if(count==20):
     break
@@ -38,5 +38,5 @@ with can.interface.Bus(bustype="socketcan", channel="can0", bitrate=250000) as b
    if(count==20):
     break
    pass
-   time.sleep(1)
+  # time.sleep(1)
  
