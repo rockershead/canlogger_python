@@ -1,5 +1,7 @@
 from data_aggre_management import combine_dict_json1
-from data_aggre_technical import combine_dict_json2
+#from data_aggre_technical import combine_dict_json2
+from cell_voltage import new_dict3
+from module_temp import new_dict4
 import json
 import os
 import os.path
@@ -58,10 +60,16 @@ mqttc.connect(broker_address, port)
 mqttc.publish(topic,combine_dict_json1,qos=0)
  
 print("management data published")
+time.sleep(5)
+#mqttc.publish(topic,combine_dict_json2,qos=0)
 
-mqttc.publish(topic,combine_dict_json2,qos=0)
+#print("technical data published")
+mqttc.publish(topic,new_dict4,qos=0)
+print("module temp sent")
+time.sleep(5)
 
-print("technical data published")
+mqttc.publish(topic,new_dict3,qos=0)
+print("voltage info sent")
   						
  
  
