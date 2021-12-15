@@ -11,5 +11,7 @@ combine_dict1={**new_dict1,**new_dict2}
 combine_dict1["timestamp"]=timestamp
 
 combine_dict_json1=json.dumps(combine_dict1)
+
+alarm["timestamp"]=timestamp
 json_alarm=json.dumps(alarm)
 print(combine_dict_json1)
