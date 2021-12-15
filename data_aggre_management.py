@@ -1,6 +1,6 @@
 import time
 from datetime import datetime
-from sysinfo import new_dict1
+from sysinfo import new_dict1,alarm
 from batt_info import new_dict2
 import json
 
@@ -11,4 +11,5 @@ combine_dict1={**new_dict1,**new_dict2}
 combine_dict1["timestamp"]=timestamp
 
 combine_dict_json1=json.dumps(combine_dict1)
+json_alarm=json.dumps(alarm)
 print(combine_dict_json1)

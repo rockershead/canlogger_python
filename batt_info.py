@@ -24,7 +24,7 @@ with can.interface.Bus(bustype="socketcan", channel="can0", bitrate=250000) as b
   for key in json_data.keys():
    new_dict2[key]=json_data[key]
    
-  #time.sleep(1)
+  
   print(count)
   if(count==1):
     count=0
@@ -42,7 +42,7 @@ with can.interface.Bus(bustype="socketcan", channel="can0", bitrate=250000) as b
   for key in json_data.keys():
    new_dict2[key]=json_data[key]
    
-  #time.sleep(1)
+  
   print(count)
   if(count==1):
     count=0
@@ -58,7 +58,7 @@ with can.interface.Bus(bustype="socketcan", channel="can0", bitrate=250000) as b
   for key in json_data.keys():
    new_dict2[key]=json_data[key]
    
-  #time.sleep(1)
+  
   print(count)
   if(count==1):
     count=0
@@ -74,7 +74,7 @@ with can.interface.Bus(bustype="socketcan", channel="can0", bitrate=250000) as b
   for key in json_data.keys():
    new_dict2[key]=json_data[key]
    
-  #time.sleep(1)
+  
   print(count)
   if(count==1):
     count=0
