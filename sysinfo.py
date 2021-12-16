@@ -39,6 +39,8 @@ def alarm_decode(data,rack_no):
  first_byte=data[0]+data[1]
  binary_first_byte=bin(int('1'+first_byte, 16))[3:]
  param_name='B'+str(rack_no)+'_SYS_STATUS_BIT'
+ ##last_3_bits=binary_first_byte[len(binary_first_byte)-1]+binary_first_byte[len(binary_first_byte)-2]+binary_first_byte[len(binary_first_byte)-3]
+ #last_3_bits_signal=int(last_3_bits,2)
  sys_status_bit['B'+str(rack_no)+'_SYS_STATUS_BIT_RFC']=int(binary_first_byte[len(binary_first_byte)-4])
  sys_status_bit['B'+str(rack_no)+'_SYS_STATUS_BIT_RE']=int(binary_first_byte[len(binary_first_byte)-5])
  sys_status_bit['B'+str(rack_no)+'_SYS_STATUS_BIT_MR']=int(binary_first_byte[len(binary_first_byte)-6])
