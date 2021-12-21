@@ -1,5 +1,6 @@
 from data_aggre_management import combine_dict_json1,json_alarm
 #from data_aggre_technical import combine_dict_json2
+from logger_status import device_status
 from cell_voltage import new_dict3
 from module_temp import new_dict4
 import json
@@ -66,10 +67,13 @@ print("voltage info sent")
 
 time.sleep(5)
 print(json_alarm)
+
 send_request(json_alarm)
 print("alarm info sent")
-  						
- 
+time.sleep(5)  						
+device_status["timestamp"]=timestamp
+send_request(json.dumps(device_status))
+print("Logger status sent")
  
 
 

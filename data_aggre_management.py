@@ -13,5 +13,7 @@ combine_dict1["timestamp"]=timestamp
 combine_dict_json1=json.dumps(combine_dict1)
 
 alarm["timestamp"]=timestamp
-json_alarm=json.dumps(alarm)
+json_full_alarm={"STATUS":alarm}
+json_alarm=json.dumps(json_full_alarm)
+
 print(combine_dict_json1)
