@@ -11,7 +11,7 @@ tempC = float(tempC[5:9])
 
 
 # Get cpu statistics
-cpu = str(psutil.cpu_percent()) + '%'
+cpu = psutil.cpu_percent()
 
 # Calculate memory information
 memory = psutil.virtual_memory()
@@ -33,7 +33,7 @@ storage_free = round(disk.free/1024.0/1024.0/1024.0,1)
 
 storage_total = round(disk.total/1024.0/1024.0/1024.0,1)
 storage_used=storage_total-storage_free
-storage_used="{:.1f}".format(storage_used)
+storage_used=float("{:.1f}".format(storage_used))
 
 
 device_status={}

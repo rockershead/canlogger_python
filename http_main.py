@@ -33,8 +33,16 @@ def send_request(payload):
   response = requests.post(url, data=payload, headers=headers)
   print(response.status_code)
   print(response.json())
+  if("errors" in response.json() ):
+   print("Cant send payload")
+   buffer_file = open("/home/pi/buffer", "a+")
+   buffer_file.write(payload+"\r\n")
+   buffer_file.close()
  except requests.exceptions.RequestException as e:
-  print(e)
+  print("Cant send payload")
+  buffer_file = open("/home/pi/buffer", "a+")
+  buffer_file.write(payload+"\r\n")
+  buffer_file.close()
 
 
 
@@ -51,16 +59,14 @@ send_request(combine_dict_json1)
  
 print("management data published")
 time.sleep(5)
-#mqttc.publish(topic,combine_dict_json2,qos=0)
 
-#print("technical data published")
 new_dict4["timestamp"]=timestamp
 print(json.dumps(new_dict4))
 send_request(json.dumps(new_dict4))
 print("module temp sent")
 time.sleep(5)
 new_dict3["timestamp"]=timestamp
-##voltage info
+
 print(json.dumps(new_dict3))
 send_request(json.dumps(new_dict3))
 print("voltage info sent")
@@ -74,10 +80,3 @@ time.sleep(5)
 device_status["timestamp"]=timestamp
 send_request(json.dumps(device_status))
 print("Logger status sent")
- 
-
-
- 
- 
-
-
