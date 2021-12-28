@@ -1,0 +1,3 @@
+*/10 * * * * root sudo python3 /home/pi/canlogger_python/http_main.py
+0  1 * * 0 root /sbin/shutdown -r now
+*/30 * * * * root sudo python3 /home/pi/canlogger_python/http_send_old.py
