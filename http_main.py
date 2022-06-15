@@ -1,4 +1,4 @@
-from data_aggre_management import combine_dict_json1,json_alarm
+from data_aggre_management import combine_dict_json1,json_alarm,computed_data_json
 #from data_aggre_technical import combine_dict_json2
 from logger_status import device_status
 from cell_voltage import new_dict3
@@ -58,6 +58,11 @@ send_request(combine_dict_json1)
 
  
 print("management data published")
+time.sleep(5)
+
+send_request(computed_data_json)
+print(computed_data_json)
+print("Computed data sent")
 time.sleep(5)
 
 new_dict4["timestamp"]=timestamp
